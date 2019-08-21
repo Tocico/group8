@@ -1,4 +1,4 @@
-let planets = document.querySelectorAll('img');
+
 anime({
     targets: 'img',
     rotate: '1turn',
@@ -9,7 +9,7 @@ anime({
 
 
 function parallax() {
-    var headers = document.querySelectorAll(".header");
+    let planats = document.querySelectorAll(".header");
     var multiplier = 0.1;
     
     headers.forEach(function(header) {
