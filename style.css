@@ -1,8 +1,17 @@
+ body{
+    background: linear-gradient(30deg, #060708, #1c283a, #1c0a63);
+    background-size: 600% 600%;
+    animation: AnimationName 50s ease infinite;
+    margin: 0;
+    }
+     
+    @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+    }
 html{
     scroll-behavior: smooth;
-}
-body{
-    margin: 0;
 }
 .container{
     display: grid;
