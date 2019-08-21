@@ -1,3 +1,13 @@
+let planets = document.querySelectorAll('img');
+anime({
+    targets: 'img',
+    rotate: '1turn',
+    easing: 'linear',
+    loop:true,
+    duration: 10000,
+});
+
+
 function parallax() {
     var headers = document.querySelectorAll(".header");
     var multiplier = 0.1;
@@ -24,7 +34,7 @@ function parallax() {
   if (window.addEventListener) {
     addEventListener('DOMContentLoaded', parallax, false); 
     addEventListener('load', parallax, false);
-    addEventListener('scroll', parallax, false);
+    addEventListener('scroll', parallax, true);
   }
   
   function elementDistanceFromBottomOfViewport(el) {
