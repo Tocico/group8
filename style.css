@@ -1,15 +1,21 @@
  body{
-    background: linear-gradient(30deg, #060708, #1c283a, #1c0a63);
-    background-size: 600% 600%;
-    animation: AnimationName 50s ease infinite;
-    margin: 0;
+    background: linear-gradient(180deg, #18253d, #062783, #364d8b) fixed;
+    animation:bg-move 3s linear 0s infinite;
     }
-     
-    @keyframes AnimationName {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-    }
+
+    @keyframes bg-move{
+        0%{background: linear-gradient(60deg, #18253d, #062783, #364d8b) fixed;}
+        10%{background: linear-gradient(80deg, #18253d, #062783, #364d8b) fixed;}
+        20%{background: linear-gradient(100deg, #18253d, #062783, #364d8b) fixed;}
+        30%{background: linear-gradient(120deg, #18253d, #062783, #364d8b) fixed;}
+        40%{background: linear-gradient(140deg, #18253d, #062783, #364d8b) fixed;}
+        50%{background: linear-gradient(160deg, #18253d, #062783, #364d8b) fixed;}
+        60%{background: linear-gradient(140deg, #18253d, #062783, #364d8b) fixed;}
+        70%{background: linear-gradient(120deg, #18253d, #062783, #364d8b) fixed;}
+        80%{background: linear-gradient(100deg, #18253d, #062783, #364d8b) fixed;}
+        90%{background: linear-gradient(80deg, #18253d, #062783, #364d8b) fixed;}
+        100%{background: linear-gradient(60deg, #18253d, #062783, #364d8b) fixed;}
+         }
 html{
     scroll-behavior: smooth;
 }
@@ -18,7 +24,6 @@ html{
     grid-template-rows: repeat(3,1fr);
     justify-items: center;
     align-items: center;
-    background-color: darkslategray;
     color: aliceblue;
 }
 .section{
