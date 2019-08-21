@@ -1,19 +1,32 @@
-body {
+/* body {
     font: 42px "Source Sans Pro", "Helvetica Neue", Arial, Helvetica, sans-serif;
     background-color: #fff;
     color: #000;
     text-align: center;
     margin: 0;
     padding: 0;
-  }
+  }*/
   .section {
     padding: 300px;
+    /* background-color: #000; */
   }
-  .section-blue {
+  /* .section-blue {
     background-color: #1267fb;
     color: #fff;
   }
   .section-black {
     background-color: #000;
     color: #fff;
-  }
+  }  */
+
+  body{
+    background: linear-gradient(30deg, #060708, #1c283a, #1c0a63);
+    background-size: 600% 600%;
+    animation: AnimationName 50s ease infinite;
+    }
+     
+    @keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+    }
