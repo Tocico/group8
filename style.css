@@ -68,6 +68,9 @@
      height: 250px;
      width: 250px;
  }
+#earthtext{
+    right: -500px;
+}
 
  h2, h1{
      font-size: 2.5em;
