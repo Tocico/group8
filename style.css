@@ -1,39 +1,99 @@
- body{
-    background: linear-gradient(180deg, #18253d, #062783, #364d8b) fixed;
-    animation:bg-move 3s linear 0s infinite;
-    }
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One|Saira+Semi+Condensed&display=swap');
+ 
+ body {
+     background: linear-gradient(180deg, #18253d, #062783, #364d8b) fixed;
+     animation: bg-move 3s linear 0s infinite;
+     font-family: 'Saira Semi Condensed', sans-serif;
+ }
 
-    @keyframes bg-move{
-        0%{background: linear-gradient(60deg, #18253d, #062783, #364d8b) fixed;}
-        10%{background: linear-gradient(80deg, #18253d, #062783, #364d8b) fixed;}
-        20%{background: linear-gradient(100deg, #18253d, #062783, #364d8b) fixed;}
-        30%{background: linear-gradient(120deg, #18253d, #062783, #364d8b) fixed;}
-        40%{background: linear-gradient(140deg, #18253d, #062783, #364d8b) fixed;}
-        50%{background: linear-gradient(160deg, #18253d, #062783, #364d8b) fixed;}
-        60%{background: linear-gradient(140deg, #18253d, #062783, #364d8b) fixed;}
-        70%{background: linear-gradient(120deg, #18253d, #062783, #364d8b) fixed;}
-        80%{background: linear-gradient(100deg, #18253d, #062783, #364d8b) fixed;}
-        90%{background: linear-gradient(80deg, #18253d, #062783, #364d8b) fixed;}
-        100%{background: linear-gradient(60deg, #18253d, #062783, #364d8b) fixed;}
-         }
-html{
-    scroll-behavior: smooth;
-}
-.container{
-    display: grid;
-    grid-template-rows: repeat(3,1fr);
-    justify-items: center;
-    align-items: center;
-    color: aliceblue;
-}
-.section{
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-img{
-    height: 250px;
-    width: 250px;
-}
+ /* background color */
+
+ @keyframes bg-move {
+     0% {
+         background: linear-gradient(60deg, #18253d, #062783, #364d8b) fixed;
+     }
+     10% {
+         background: linear-gradient(80deg, #18253d, #062783, #364d8b) fixed;
+     }
+     20% {
+         background: linear-gradient(100deg, #18253d, #062783, #364d8b) fixed;
+     }
+     30% {
+         background: linear-gradient(120deg, #18253d, #062783, #364d8b) fixed;
+     }
+     40% {
+         background: linear-gradient(140deg, #18253d, #062783, #364d8b) fixed;
+     }
+     50% {
+         background: linear-gradient(160deg, #18253d, #062783, #364d8b) fixed;
+     }
+     60% {
+         background: linear-gradient(140deg, #18253d, #062783, #364d8b) fixed;
+     }
+     70% {
+         background: linear-gradient(120deg, #18253d, #062783, #364d8b) fixed;
+     }
+     80% {
+         background: linear-gradient(100deg, #18253d, #062783, #364d8b) fixed;
+     }
+     90% {
+         background: linear-gradient(80deg, #18253d, #062783, #364d8b) fixed;
+     }
+     100% {
+         background: linear-gradient(60deg, #18253d, #062783, #364d8b) fixed;
+     }
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ .container {
+     display: grid;
+     grid-template-rows: repeat(3, 1fr);
+     justify-items: center;
+     align-items: center;
+     color: aliceblue;
+ }
+
+ .section {
+     display: grid;
+     justify-items: center;
+     align-items: center;
+     height: 100vh;
+     width: 100vw;
+ }
+
+ img {
+     height: 250px;
+     width: 250px;
+ }
+ .planets{
+     
+ }
+
+ h2, h1{
+     font-size: 2.5em;
+     font-family: 'Rubik Mono One', sans-serif;
+ }
+
+ .star {
+     width: 4px;
+     height: 4px;
+     background-color: rgba(255, 241, 202, 0.8);
+     border-radius: 2px;
+     box-shadow: 0 0 5px rgba(255, 241, 202, 0.8), 0 0 8px rgba(255, 241, 202, 0.8), 0 0 15px rgba(255, 241, 202, 0.9);
+ }
+ .header{
+     width: 40%;
+     font-size: 1.5em;
+     margin-right: 50%;
+     opacity: 0;
+     transform: translateX(-70px);
+     transition: all 1.2s ease-out;
+ }
+  .headerVisible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
