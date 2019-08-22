@@ -92,7 +92,15 @@
      transform: translateX(-70px);
      transition: all 1.2s ease-out;
  }
-
+ 
+ .earthtext{
+     width: 40%;
+     font-size: 1.5em;
+     margin-left: 50%;
+     opacity: 0;
+     transform: translateX(70px);
+     transition: all 1.2s ease-out;
+ }
  
   .headerVisible {
     opacity: 1;

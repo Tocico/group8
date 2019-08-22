@@ -1,10 +1,9 @@
-
 // anime({
-//     targets: 'img',
-//     rotate: '1turn',
-//     easing: 'linear',
-//     loop:true,
-//     duration: 10000,
+//   targets: "img",
+//   rotate: "1turn",
+//   easing: "linear",
+//   loop: true,
+//   duration: 10000
 // });
 
 anime({
@@ -21,7 +20,7 @@ anime({
 
 anime({
   targets: "#earth",
-  translateX: [600,300],
+  translateX: [-600,80],
   rotate: '2turn',
   scale: 1.3,
   easing: 'easeInOutQuart',
@@ -32,13 +31,13 @@ anime({
 
 /* Parallax*/
 function parallax() {
-    let planets = document.querySelectorAll(".planets");
+    var headers = document.querySelectorAll(".title");
     var multiplier = 0.1;
     
-    planets.forEach(function(planet) {
-      if (isElementInViewport(planet)) {
-        let distance = elementDistanceFromBottomOfViewport(planet);
-        planet.style.transform = `translateX(-${distance*multiplier}px)`;
+    headers.forEach(function(header) {
+      if (isElementInViewport(header)) {
+        var distance = elementDistanceFromBottomOfViewport(header);
+        header.style.transform = "translateY(-" + distance*multiplier + "px)";
       }
     });
   }
@@ -57,11 +56,11 @@ function parallax() {
   if (window.addEventListener) {
     addEventListener('DOMContentLoaded', parallax, false); 
     addEventListener('load', parallax, false);
-    addEventListener('scroll', parallax, true);
+    addEventListener('scroll', parallax, false);
   }
   
   function elementDistanceFromBottomOfViewport(el) {
-    let rect = el.getBoundingClientRect();
+    var rect = el.getBoundingClientRect();
   
     return window.innerHeight - rect.top;
   }
