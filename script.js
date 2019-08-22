@@ -1,9 +1,9 @@
 // anime({
-//   targets: "img",
-//   rotate: "1turn",
-//   easing: "linear",
-//   loop: true,
-//   duration: 10000
+//     targets: 'img',
+//     rotate: '1turn',
+//     easing: 'linear',
+//     loop:true,
+//     duration: 30000,
 // });
 
 anime({
@@ -20,7 +20,7 @@ anime({
 
 anime({
   targets: "#earth",
-  translateX: [-600,80],
+  translateX: [500,50],
   rotate: '2turn',
   scale: 1.3,
   easing: 'easeInOutQuart',
