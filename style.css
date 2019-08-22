@@ -91,6 +91,10 @@
      height: 250px;
      width: 250px;
  }
+ #mars{
+     height: 100px;
+     width: 100px;
+ }
 
 
 
@@ -131,9 +135,9 @@
     opacity: 1;
     transform: translateX(0);
   }
-.planet{
+/* .planet{
     right: 900px;
-}
+} */
 
   .h1title {
     font-weight: 800;
