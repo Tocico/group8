@@ -1,10 +1,25 @@
-// anime({
-//     targets: 'img',
-//     rotate: '1turn',
-//     easing: 'linear',
-//     loop:true,
-//     duration: 30000,
-// });
+anime({
+  translateX: {
+    value: -400,
+    duration: 1000,
+    easing: 'easeOutQuint',
+  },
+    targets: '#mars',
+    rotate: {
+      value: 360,
+      duration: 2000,
+      easing: 'easeInOutSine',
+    },
+    scale: {
+      value: 2.5,
+      duration: 3000,
+      delay: 2000,
+      easing: 'easeInOutBounce'
+    },
+    delay: 500,
+    direction: 'alternate',
+    loop: true,
+});
 
 anime({
   targets: "#venus",
