@@ -31,11 +31,11 @@ anime({
 
 /* Parallax*/
 function parallax() {
-    let planets = document.querySelectorAll(".planets");
-    var multiplier = 0.2;
+    let title = document.querySelectorAll(".title");
+    var multiplier = 0.1;
 
     
-    headers.forEach(function(header) {
+    title.forEach(function(header) {
       if (isElementInViewport(header)) {
         var distance = elementDistanceFromBottomOfViewport(header);
         header.style.transform = "translateY(-" + distance*multiplier + "px)";
