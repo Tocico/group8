@@ -47,6 +47,13 @@ function parallax() {
           loop:true,
           duration: 30000,
       });
+    var multiplier = 0.2;
+
+    
+    headers.forEach(function(header) {
+      if (isElementInViewport(header)) {
+        var distance = elementDistanceFromBottomOfViewport(header);
+        header.style.transform = "translateY(-" + distance*multiplier + "px)";
       }
     });
   }
@@ -65,11 +72,11 @@ function parallax() {
   if (window.addEventListener) {
     addEventListener('DOMContentLoaded', parallax, false); 
     addEventListener('load', parallax, false);
-    addEventListener('scroll', parallax, true);
+    addEventListener('scroll', parallax, false);
   }
   
   function elementDistanceFromBottomOfViewport(el) {
-    let rect = el.getBoundingClientRect();
+    var rect = el.getBoundingClientRect();
   
     return window.innerHeight - rect.top;
   }
@@ -103,14 +110,26 @@ function parallax() {
   }
   
 
-  var path = anime.path('.motion-path-demo path');
+  var textWrapper = document.querySelector('.h1title');
+  textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+  
+  anime.timeline({loop: true})
+    .add({
+      targets: '.h1title .letter',
+      translateY: [-100,0],
+      translateX: [90,0],
+      easing: "easeOutCubic",
+      duration: 1400,
+      delay: function(el, i) {
+        return 100 * i;
+      }
+    }).add({
+      targets: '.h1title',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutCubic",
+      delay: 1000
+    });
 
-  anime({
-    targets: '.motion-path-demo .el',
-    translateX: path('x'),
-    translateY: path('y'),
-    rotate: path('angle'),
-    easing: 'linear',
-    duration: 2000,
-    loop: true
-  });
+
+    let body = document.getElementsByTagName('body');}
