@@ -21,7 +21,7 @@ anime({
 
 anime({
   targets: "#earth",
-  translateX: [500,50],
+  translateX: [800,100],
   rotate: '3turn',
   scale: 1.3,
   easing: 'easeInOutQuart',
@@ -132,4 +132,22 @@ function parallax() {
     });
 
 
-    let body = document.getElementsByTagName('body');}
+/* stars */
+var path = anime.path('ellipse');
+
+var easings = ['linear', 'easeInCubic', 'easeOutCubic', 'easeInOutCubic'];
+
+var motionPath = anime({
+  targets: '.star',
+  translateX: path('x'),
+  translateY: path('y'),
+  rotate: path('angle'),
+  easing: function (el, i) {
+    return easings[i];
+  },
+  duration: 9000,
+//   delay: function(el, i){
+//       return 100 * i
+//   },
+  loop: true
+})})}
