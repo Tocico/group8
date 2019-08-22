@@ -32,7 +32,7 @@ anime({
 /* Parallax*/
 function parallax() {
     let title = document.querySelectorAll(".title");
-    var multiplier = 0.1;
+    var multiplier = 0.;
 
     
     title.forEach(function(header) {
