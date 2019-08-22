@@ -20,7 +20,7 @@ anime({
 
 anime({
   targets: "#earth",
-  translateX: [500,50],
+  translateX: [800,100],
   rotate: '3turn',
   scale: 1.3,
   easing: 'easeInOutQuart',
