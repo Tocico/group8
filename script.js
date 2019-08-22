@@ -1,10 +1,10 @@
-anime({
-    targets: '#mars',
-    rotate: '2turn',
-    easing: 'linear',
-    loop:true,
-    duration: 10000,
-});
+// anime({
+//     targets: 'img',
+//     rotate: '1turn',
+//     easing: 'linear',
+//     loop:true,
+//     duration: 30000,
+// });
 
 anime({
   targets: "#venus",
@@ -32,7 +32,7 @@ anime({
 /* Parallax*/
 function parallax() {
     let title = document.querySelectorAll(".title");
-    var multiplier = 0.1;
+    var multiplier = 0.05;
 
     
     title.forEach(function(header) {
@@ -45,14 +45,9 @@ function parallax() {
   
   function isElementInViewport (el) {
     var rect = el.getBoundingClientRect();
-    
   
     return (
-      // rect.top >= 0 &&
-      // rect.left >= 0 &&
-      // rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.top + (rect.height)/2 < window.innerHeight
-      // rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+        rect.top + (rect.height)/2 < window.innerHeight
     );
   }
   
@@ -83,11 +78,7 @@ function parallax() {
     var rect = el.getBoundingClientRect();
   
     return (
-      // rect.top >= 0 &&
-      // rect.left >= 0 &&
-      // rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      // rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
-      rect.top + (rect.height)/2 < window.innerHeight
+        rect.top + (rect.height)/2 < window.innerHeight
     );
   }
   
