@@ -1,15 +1,30 @@
-// anime({
-//     targets: 'img',
-//     rotate: '1turn',
-//     easing: 'linear',
-//     loop:true,
-//     duration: 30000,
-// });
+anime({
+  translateX: {
+    value: -400,
+    duration: 1000,
+    easing: 'easeOutQuint',
+  },
+    targets: '#mars',
+    rotate: {
+      value: 360,
+      duration: 2000,
+      easing: 'easeInOutSine',
+    },
+    scale: {
+      value: 2.5,
+      duration: 3000,
+      delay: 2000,
+      easing: 'easeInOutBounce'
+    },
+    delay: 500,
+    direction: 'alternate',
+    loop: true,
+});
 
 anime({
   targets: "#venus",
   translateX: [-300,400],
-  translateY: [100,-500],
+  translateY: [0,-500],
   rotate: '1turn',
   scale: 1.5,
   easing: 'easeInOutQuart',
@@ -89,7 +104,7 @@ function parallax() {
     addEventListener('scroll', checkForVisibility, false);
   }
   
-
+ /* Title animering */
   var textWrapper = document.querySelector('.h1title');
   textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
   
@@ -111,26 +126,6 @@ function parallax() {
       delay: 1000
     });
 
-
-/* stars */
-var path = anime.path('ellipse');
-
-var easings = ['linear', 'easeInCubic', 'easeOutCubic', 'easeInOutCubic'];
-
-var motionPath = anime({
-  targets: '.star',
-  translateX: path('x'),
-  translateY: path('y'),
-  rotate: path('angle'),
-  easing: function (el, i) {
-    return easings[i];
-  },
-  duration: 9000,
-//   delay: function(el, i){
-//       return 100 * i
-//   },
-  loop: true
-})
 
 /* Sun */
 anime({
@@ -164,5 +159,41 @@ anime({
     translateX: [-1000,600],
     translateY: [700,-500],
     scale: 2,
-    easing: 'easeInOutCubic',
+    easing: 'easeInOutSine',
     })
+
+/* Shooting star */
+  anime({
+    targets: '.shootingstar',
+    loop: true,
+    delay: 100,
+    translateX: [40,-500],
+    translateY: [-100,600], 
+    duration: 5000, 
+    keyframes: [
+      {opacity: 1 , scale: 2},
+    ],
+    opacity: 0,
+    easing: 'easeInSine',
+  })
+  
+/* star background */
+ let stars = document.createElement('div');
+ stars.className = 'stars';
+ console.log(stars);
+ for(let i = 0; i< 100; i++){
+    getStar(stars);
+
+}
+function getStar(stars){
+  let starClone = stars.cloneNode(true);
+  let starStyle = starClone.style;
+  starStyle.right = 100 * Math.random() + '%';
+  starStyle.left = 100 * Math.random() + '%';
+  starStyle.top = 100 * Math.random() + '%';
+  starStyle.bottom = 100 * Math.random() + '%';
+  
+  document.body.appendChild(starClone);
+
+ 
+}
