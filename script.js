@@ -132,3 +132,38 @@ var motionPath = anime({
   loop: true
 })
 
+/* Sun */
+anime({
+    targets: '#sun',
+    loop: true,
+    duration: 10000,
+    translateY: [
+        {
+            value: -30,
+        },{
+            value: 20
+        }
+    ],
+    translateX: [
+        {
+            value: -50, 
+        },{
+            value: 40,
+        }
+    ],
+    direction:'alternate',
+    translateX: 100,
+    easing: 'easeInOutCubic',
+    })
+
+/* Rocket*/
+anime({
+    targets: '#rocket',
+    loop: true,
+    duration: 9000,
+    translateX: [-1000,600],
+    translateY: [700,-500],
+    scale: 2,
+    // translateX: 100,
+    easing: 'easeInOutCubic',
+    })

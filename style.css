@@ -60,7 +60,6 @@
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: 1fr 3fr;
     height: 100vh;
     width: 100vw;
 }
@@ -137,11 +136,12 @@
 }
 
   .h1title {
-    padding: 40px 0;
     font-weight: 800;
     font-size: 2.6em;
     letter-spacing: 0.02em;
     overflow: hidden;
+    grid-column: none;
+    margin-bottom: 200px;
   }
   
   .h1title .letter {
@@ -149,5 +149,8 @@
     line-height: 1em;
   }
 
+  #rocket{
+      width: 150px;
+  }
 
  
