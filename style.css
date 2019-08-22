@@ -56,6 +56,14 @@
      color: aliceblue;
  }
 
+ .section-0 {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+    width: 100vw;
+}
  .section{
      display: grid;
      justify-items: center;
@@ -133,8 +141,8 @@
   .h1title {
     padding: 40px 0;
     font-weight: 800;
-    font-size: 3em;
-    letter-spacing: 0.04em;
+    font-size: 2.6em;
+    letter-spacing: 0.02em;
     overflow: hidden;
   }
   
@@ -142,4 +150,6 @@
     display: inline-block;
     line-height: 1em;
   }
-  
+
+
+ 
