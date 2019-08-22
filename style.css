@@ -93,6 +93,17 @@
      transition: all 1.2s ease-out;
  }
 
+ .header-blue {
+    width: 40%;
+    font-size: 1.5em;
+    margin-right: 50%;
+    opacity: 0;
+    transform: translateX(-900px);
+    transition: all 1.2s ease-out;
+
+ }
+ 
+ 
  
   .headerVisible {
     opacity: 1;
