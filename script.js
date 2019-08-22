@@ -78,7 +78,8 @@ function parallax() {
     var rect = el.getBoundingClientRect();
   
     return (
-        rect.top + (rect.height)/2 < window.innerHeight
+      
+      rect.top + (rect.height)/2 < window.innerHeight
     );
   }
   
