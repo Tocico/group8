@@ -78,7 +78,8 @@ function parallax() {
     var rect = el.getBoundingClientRect();
   
     return (
-        rect.top + (rect.height)/2 < window.innerHeight
+      
+      rect.top + (rect.height)/2 < window.innerHeight
     );
   }
   
@@ -163,6 +164,5 @@ anime({
     translateX: [-1000,600],
     translateY: [700,-500],
     scale: 2,
-    // translateX: 100,
     easing: 'easeInOutCubic',
     })
