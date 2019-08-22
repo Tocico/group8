@@ -89,6 +89,8 @@
      transform: translateX(-70px);
      transition: all 1.2s ease-out;
  }
+
+ 
   .headerVisible {
     opacity: 1;
     transform: translateX(0);
