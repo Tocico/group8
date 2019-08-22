@@ -20,9 +20,9 @@ anime({
 
 anime({
   targets: "#earth",
-  translateX: [700,-300],
-  rotate: '2turn',
-  scale: 1.4,
+  translateX: [800,100],
+  rotate: '3turn',
+  scale: 1.3,
   easing: 'easeInOutQuart',
   duration: 4000,
   direction: 'alternate',
@@ -31,8 +31,9 @@ anime({
 
 /* Parallax*/
 function parallax() {
-    var headers = document.querySelectorAll(".title");
-    var multiplier = 0.1;
+    let planets = document.querySelectorAll(".planets");
+    var multiplier = 0.2;
+
     
     headers.forEach(function(header) {
       if (isElementInViewport(header)) {
