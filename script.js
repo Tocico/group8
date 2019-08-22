@@ -18,6 +18,17 @@ anime({
   loop: true
 })
 
+anime({
+  targets: "#earth",
+  translateX: [-600,80],
+  rotate: '2turn',
+  scale: 1.3,
+  easing: 'easeInOutQuart',
+  duration: 4000,
+  direction: 'alternate',
+  loop: true
+})
+
 /* Parallax*/
 function parallax() {
     var headers = document.querySelectorAll(".title");
