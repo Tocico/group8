@@ -92,12 +92,7 @@
      height: 250px;
      width: 250px;
  }
-/*#earthtext{
-    grid-column: 2;
-}
-#tellus{
-    grid-column: 1;
-}*/
+
 
 
  h2, h1{
@@ -137,6 +132,9 @@
     opacity: 1;
     transform: translateX(0);
   }
+.planet{
+    right: 900px;
+}
 
   .h1title {
     padding: 40px 0;
