@@ -108,9 +108,30 @@
      transform: translateX(-80px);
      transition: all 1.2s ease-out;
  }
-
- .headerVisible {
+ 
+ .earthtext{
+     width: 40%;
+     font-size: 1.5em;
+     margin-left: 50%;
+     opacity: 0;
+     transform: translateX(70px);
+     transition: all 1.2s ease-out;
+ }
+ 
+  .headerVisible {
     opacity: 1;
     transform: translateX(0);
   }
 
+  .h1title {
+    padding: 40px 0;
+    font-weight: 800;
+    font-size: 3em;
+    letter-spacing: 0.04em;
+    overflow: hidden;
+  }
+  
+  .h1title .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
