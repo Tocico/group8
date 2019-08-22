@@ -71,14 +71,15 @@
      height: 100vh;
      width: 100vw;
  }
+
  .section-2 {
     display: grid;
     justify-items: center;
     align-items: center;
-    grid-template-columns: 1fr 1fr;
     height: 100vh;
     width: 100vw;
 }
+
 .section-3 {
     display: grid;
     justify-items: center;
@@ -91,12 +92,13 @@
      height: 250px;
      width: 250px;
  }
-#earthtext{
+/*#earthtext{
     grid-column: 2;
 }
 #tellus{
     grid-column: 1;
-}
+}*/
+
 
  h2, h1{
      font-size: 2.5em;
@@ -115,18 +117,21 @@
      font-size: 1.5em;
      margin-right: 50%;
      opacity: 0;
-     transform: translateX(-70px);
+     transform: translateX(-80px);
      transition: all 1.2s ease-out;
+ }
+
+ .header-blue {
+    width: 40%;
+    font-size: 1.5em;
+    margin-left: 40%;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 1.2s ease-out;
+
  }
  
- .earthtext{
-     width: 40%;
-     font-size: 1.5em;
-     margin-left: 50%;
-     opacity: 0;
-     transform: translateX(70px);
-     transition: all 1.2s ease-out;
- }
+ 
  
   .headerVisible {
     opacity: 1;
