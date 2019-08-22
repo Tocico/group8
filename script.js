@@ -1,11 +1,11 @@
 
-// anime({
-//     targets: 'img',
-//     rotate: '1turn',
-//     easing: 'linear',
-//     loop:true,
-//     duration: 30000,
-// });
+anime({
+    targets: '#mars',
+    rotate: '2turn',
+    easing: 'linear',
+    loop:true,
+    duration: 30000,
+});
 
 anime({
   targets: "#venus",
@@ -33,18 +33,26 @@ anime({
 /* Parallax*/
 function parallax() {
     let planets = document.querySelectorAll(".planets");
-    var multiplier = 0.2;
+    var multiplier = 0.9;
     
     planets.forEach(function(planet) {
       if (isElementInViewport(planet)) {
         let distance = elementDistanceFromBottomOfViewport(planet);
+        console.log(distance*multiplier);
         planet.style.transform = `translateX(-${distance*multiplier}px)`;
+        anime({
+          targets: '#mars',
+          rotate: `${10*multiplier}turn`,
+          easing: 'linear',
+          loop:true,
+          duration: 30000,
+      });
       }
     });
   }
   
   function isElementInViewport (el) {
-    var rect = el.getBoundingClientRect();
+    let rect = el.getBoundingClientRect();
   
     return (
       rect.top >= 0 &&
@@ -95,3 +103,14 @@ function parallax() {
   }
   
 
+  var path = anime.path('.motion-path-demo path');
+
+  anime({
+    targets: '.motion-path-demo .el',
+    translateX: path('x'),
+    translateY: path('y'),
+    rotate: path('angle'),
+    easing: 'linear',
+    duration: 2000,
+    loop: true
+  });

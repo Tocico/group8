@@ -82,6 +82,7 @@
      height: 250px;
      width: 250px;
  }
+
 #earthtext{
     position: relative;
     left: 800px;
@@ -113,4 +114,6 @@
     opacity: 1;
     transform: translateX(0);
   }
-
+.planet{
+    right: 900px;
+}
