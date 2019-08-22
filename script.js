@@ -1,11 +1,11 @@
 
-anime({
-    targets: 'img',
-    rotate: '1turn',
-    easing: 'linear',
-    loop:true,
-    duration: 10000,
-});
+// anime({
+//     targets: 'img',
+//     rotate: '1turn',
+//     easing: 'linear',
+//     loop:true,
+//     duration: 10000,
+// });
 
 anime({
   targets: "#venus",
@@ -19,15 +19,21 @@ anime({
   loop: true
 })
 
-// anime({
-//   targets: '#mars',
-
-// });
+anime({
+  targets: "#earth",
+  translateX: [600,300],
+  rotate: '2turn',
+  scale: 1.3,
+  easing: 'easeInOutQuart',
+  duration: 4000,
+  direction: 'alternate',
+  loop: true
+})
 
 /* Parallax*/
 function parallax() {
     let planets = document.querySelectorAll(".planets");
-    var multiplier = 0.5;
+    var multiplier = 0.1;
     
     planets.forEach(function(planet) {
       if (isElementInViewport(planet)) {
@@ -60,32 +66,32 @@ function parallax() {
     return window.innerHeight - rect.top;
   }
 
-  // function checkForVisibility() {
-  //   var headers = document.querySelectorAll(".header");
-  //   headers.forEach(function(header) {
-  //     if (isElementInViewport(header)) {
-  //       header.classList.add("headerVisible");
-  //     } else {
-  //       header.classList.remove("headerVisible");
-  //     }
-  //   });
-  // }
+  function checkForVisibility() {
+    var headers = document.querySelectorAll(".header");
+    headers.forEach(function(header) {
+      if (isElementInViewport(header)) {
+        header.classList.add("headerVisible");
+      } else {
+        header.classList.remove("headerVisible");
+      }
+    });
+  }
   
-  // function isElementInViewport (el) {
-  //   var rect = el.getBoundingClientRect();
+  function isElementInViewport (el) {
+    var rect = el.getBoundingClientRect();
   
-  //   return (
-  //     rect.top >= 0 &&
-  //     rect.left >= 0 &&
-  //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-  //     rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
-  //   );
-  // }
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth) 
+    );
+  }
   
-  // if (window.addEventListener) {
-  //   addEventListener('DOMContentLoaded', checkForVisibility, false); 
-  //   addEventListener('load', checkForVisibility, false);
-  //   addEventListener('scroll', checkForVisibility, false);
-  // }
+  if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', checkForVisibility, false); 
+    addEventListener('load', checkForVisibility, false);
+    addEventListener('scroll', checkForVisibility, false);
+  }
   
 
