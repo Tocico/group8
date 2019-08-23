@@ -195,3 +195,17 @@ function getStar(stars){
 
  
 }
+
+/* Footer */
+
+    let movingPlanet = document.querySelectorAll('.hover');
+    movingPlanet.forEach(a=>a.addEventListener('mouseenter',(e)=>{
+        anime({
+          targets: '#'+a.id,
+          rotate: '+=1turn',
+          easing:'linear',
+          scale: 2,
+          duration: 800,
+        });
+    }))
+  
