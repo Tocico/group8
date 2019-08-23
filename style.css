@@ -60,7 +60,11 @@
     display: grid;
     justify-items: center;
     align-items: center;
+<<<<<<< HEAD
     margin-top: 7%;
+=======
+
+>>>>>>> dd45f2a5f1d3b72fa10e130f7c538ade218c889c
 }
  img {
      height: 250px;
