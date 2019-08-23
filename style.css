@@ -4,6 +4,7 @@
      background: linear-gradient(180deg, #18253d, #062783, #364d8b) fixed;
      animation: bg-move 3s linear 0s infinite;
      font-family: 'Saira Semi Condensed', sans-serif;
+     
  }
 
  /* background color */
@@ -54,17 +55,14 @@
      justify-items: center;
      align-items: center;
      color: aliceblue;
+     overflow: hidden;
+     /* display: none; */
  }
 
  .section-0, .section-1, .section-2, .section-3 {
     display: grid;
     justify-items: center;
     align-items: center;
-<<<<<<< HEAD
-    margin-top: 7%;
-=======
-
->>>>>>> dd45f2a5f1d3b72fa10e130f7c538ade218c889c
 }
  img {
      height: 250px;
@@ -135,5 +133,3 @@
     right: 5%;
   }
  
-
-  

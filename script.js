@@ -1,3 +1,4 @@
+
 anime({
   translateX: {
     value: [-500,500],
@@ -204,7 +205,7 @@ function getStar(stars){
           targets: '#'+a.id,
           rotate: '+=1turn',
           easing:'linear',
-          scale: 2,
+          scale: 1.5,
           duration: 800,
         });
     }))
