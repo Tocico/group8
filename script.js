@@ -1,211 +1,223 @@
 anime({
   translateX: {
-    value: [-500,500],
+    value: [-500, 500],
     duration: 1000,
-    easing: 'easeOutQuint',
+    easing: "easeOutQuint"
   },
-    targets: '#mars',
-    rotate: {
-      value: 800,
-      duration: 2000,
-      easing: 'easeInOutSine',
-    },
-    scale: {
-      value: 4.5,
-      duration: 3000,
-      delay: 2000,
-      easing: 'easeInOutBounce'
-    },
-    delay: 500,
-    direction: 'alternate',
-    loop: true,
+  targets: "#mars",
+  rotate: {
+    value: 800,
+    duration: 2000,
+    easing: "easeInOutSine"
+  },
+  scale: {
+    value: 4.5,
+    duration: 3000,
+    delay: 2000,
+    easing: "easeInOutBounce"
+  },
+  delay: 500,
+  direction: "alternate",
+  loop: true
 });
 
 anime({
   targets: "#venus",
-  translateX: [-300,400],
-  translateY: [0,-500],
-  rotate: '1turn',
+  translateX: [-300, 400],
+  translateY: [0, -500],
+  rotate: "1turn",
   scale: 1.5,
-  easing: 'easeInOutQuart',
+  easing: "easeInOutQuart",
   duration: 7000,
-  direction: 'alternate',
+  direction: "alternate",
   loop: true
-})
+});
 
 anime({
   targets: "#earth",
-  translateX: [800,100],
-  rotate: '3turn',
+  translateX: [800, 100],
+  rotate: "3turn",
   scale: 1.3,
-  easing: 'easeInOutQuart',
+  easing: "easeInOutQuart",
   duration: 4000,
-  direction: 'alternate',
+  direction: "alternate",
   loop: true
-})
+});
 
 /* Parallax*/
 function parallax() {
-    let title = document.querySelectorAll(".title");
-    var multiplier = 0.05;
+  let title = document.querySelectorAll(".title");
+  var multiplier = 0.05;
 
-    
-    title.forEach(function(header) {
-      if (isElementInViewport(header)) {
-        var distance = elementDistanceFromBottomOfViewport(header);
-        header.style.transform = "translateY(-" + distance*multiplier + "px)";
-      }
-    });
-  }
-  
-  function isElementInViewport (el) {
-    var rect = el.getBoundingClientRect();
-  
-    return (
-        rect.top + (rect.height)/2 < window.innerHeight
-    );
-  }
-  
-  if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', parallax, false); 
-    addEventListener('load', parallax, false);
-    addEventListener('scroll', parallax, false);
-  }
-  
-  function elementDistanceFromBottomOfViewport(el) {
-    var rect = el.getBoundingClientRect();
-  
-    return window.innerHeight - rect.top;
-  }
+  title.forEach(function(header) {
+    if (isElementInViewport(header)) {
+      var distance = elementDistanceFromBottomOfViewport(header);
+      header.style.transform = "translateY(-" + distance * multiplier + "px)";
+    }
+  });
+}
 
-  /* Sub title animation */
-  function checkForVisibility() {
-    var headers = document.querySelectorAll(".header");
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
 
-    headers.forEach(function(header) {
-      if (isElementInViewport(header)) {
-        header.classList.add("headerVisible");
-      } else {
-        header.classList.remove("headerVisible");
-      }
-    });
-  }
+  return rect.top + rect.height / 2 < window.innerHeight;
+}
 
-  /* Main title animation */
-  function titleActivity(){
-    let h1title = document.querySelectorAll(".h1title");
+if (window.addEventListener) {
+  addEventListener("DOMContentLoaded", parallax, false);
+  addEventListener("load", parallax, false);
+  addEventListener("scroll", parallax, false);
+}
 
-    h1title.forEach(function(h1title){
-      if(isElementInViewport(h1title)){
-        h1title.innerHTML = h1title.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
-        
-        anime.timeline({loop: false})
-          .add({
-            targets: '.h1title .letter',
-            translateY: [-100,0],
-            translateX: [90,0],
-            easing: "easeOutCubic",
-            duration: 1400,
-            delay: function(el, i) {
-              return 100 * i;
-            }
-          });
-      }
-    })
-    
-  }
-  
-  
-  function isElementInViewport (el) {
-    var rect = el.getBoundingClientRect();
-  
-    return (
-      rect.top + (rect.height)/2 < window.innerHeight
-    );
-  }
-  
-  if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', checkForVisibility, false); 
-    addEventListener('load', checkForVisibility, false);
-    addEventListener('scroll', checkForVisibility, false);
-  }
-  
-  if (window.addEventListener) {
-    addEventListener('DOMContentLoaded', titleActivity, false); 
-    addEventListener('load', titleActivity, false);
-    addEventListener('scroll', titleActivity, false);
-  }
-  
+function elementDistanceFromBottomOfViewport(el) {
+  var rect = el.getBoundingClientRect();
 
+  return window.innerHeight - rect.top;
+}
+
+/* Sub title animation */
+function checkForVisibility() {
+  var headers = document.querySelectorAll(".header");
+
+  headers.forEach(function(header) {
+    if (isElementInViewport(header)) {
+      header.classList.add("headerVisible");
+    } else {
+      header.classList.remove("headerVisible");
+    }
+  });
+}
+
+/* Main title animation */
+function titleActivity() {
+  let h1title = document.querySelectorAll(".h1title");
+
+  h1title.forEach(function(h1title) {
+    if (isElementInViewport(h1title)) {
+      h1title.innerHTML = h1title.textContent.replace(
+        /([^\x00-\x80]|\w)/g,
+        "<span class='letter'>$&</span>"
+      );
+
+      anime.timeline({ loop: false }).add({
+        targets: ".h1title .letter",
+        translateY: [-100, 0],
+        translateX: [90, 0],
+        easing: "easeOutCubic",
+        duration: 1400,
+        delay: function(el, i) {
+          return 100 * i;
+        }
+      });
+    }
+  });
+}
+
+function isElementInViewport(el) {
+  var rect = el.getBoundingClientRect();
+
+  return rect.top + rect.height / 2 < window.innerHeight;
+}
+
+if (window.addEventListener) {
+  addEventListener("DOMContentLoaded", checkForVisibility, false);
+  addEventListener("load", checkForVisibility, false);
+  addEventListener("scroll", checkForVisibility, false);
+}
+
+if (window.addEventListener) {
+  addEventListener("DOMContentLoaded", titleActivity, false);
+  addEventListener("load", titleActivity, false);
+  addEventListener("scroll", titleActivity, false);
+}
 
 /* Sun */
 anime({
-    targets: '#sun',
-    loop: true,
-    duration: 10000,
-    translateY: [-30,20],
-    translateX: [-50,40],
-    direction:'alternate',
-    translateX: 100,
-    easing: 'easeInOutCubic',
-    })
+  targets: "#sun",
+  loop: true,
+  duration: 10000,
+  translateY: [-30, 20],
+  translateX: [-50, 40],
+  direction: "alternate",
+  translateX: 100,
+  easing: "easeInOutCubic"
+});
 
 /* Rocket*/
 anime({
-    targets: '#rocket',
-    loop: true,
-    duration: 9000,
-    translateX: [-1000,600],
-    translateY: [700,-500],
-    scale: 2,
-    easing: 'easeInOutSine',
-    })
+  targets: "#rocket",
+  loop: true,
+  duration: 9000,
+  translateX: [-1000, 600],
+  translateY: [700, -500],
+  scale: 2,
+  easing: "easeInOutSine"
+});
 
 /* Shooting star */
-  anime({
-    targets: '.shootingstar',
-    loop: true,
-    delay: 100,
-    translateX: [40,-500],
-    translateY: [-100,600], 
-    duration: 5000, 
-    keyframes: [
-      {opacity: 1 , scale: 2},
-    ],
-    opacity: 0,
-    easing: 'easeInSine',
-  })
-  
-/* star background */
- let stars = document.createElement('div');
- stars.className = 'stars';
- console.log(stars);
- for(let i = 0; i< 100; i++){
-    getStar(stars);
+anime({
+  targets: ".shootingstar",
+  loop: true,
+  delay: 100,
+  translateX: [40, -500],
+  translateY: [-100, 600],
+  duration: 5000,
+  keyframes: [{ opacity: 1, scale: 2 }],
+  opacity: 0,
+  easing: "easeInSine"
+});
 
+/* star background */
+let stars = document.createElement("div");
+stars.className = "stars";
+console.log(stars);
+for (let i = 0; i < 100; i++) {
+  getStar(stars);
 }
-function getStar(stars){
+function getStar(stars) {
   let starClone = stars.cloneNode(true);
   let starStyle = starClone.style;
-  starStyle.right = 100 * Math.random() + '%';
-  starStyle.left = 100 * Math.random() + '%';
-  starStyle.top = 100 * Math.random() + '%';
-  
-  document.body.appendChild(starClone);
+  starStyle.right = 100 * Math.random() + "%";
+  starStyle.left = 100 * Math.random() + "%";
+  starStyle.top = 100 * Math.random() + "%";
 
- 
+  document.body.appendChild(starClone);
 }
 
 /* Footer */
 
-    let movingPlanet = document.querySelectorAll('.hover');
-    movingPlanet.forEach(a=>a.addEventListener('mouseenter',(e)=>{
-        anime({
-          targets: '#'+a.id,
-          rotate: '+=1turn',
-          easing:'linear',
-          scale: 2,
-          duration: 800,
-        });
-    }))
-  
+let movingPlanet = document.querySelectorAll(".hover");
+movingPlanet.forEach(a =>
+  a.addEventListener("mouseover", e => {
+    anime({
+      targets: "#" + a.id,
+      rotate: "+=1turn",
+      easing: "linear",
+      scale: 1,
+      duration: 800,
+      loop: 2
+    });
+  })
+);
+
+anime({
+  targets: "#milky-way",
+  translateY: [400, -50],
+  translateX: [-300, 900],
+  easing: "linear",
+  scale: 1,
+  direction: 'alternate',
+  loop:true,
+  duration: 13000
+});
+
+anime({
+  targets: "#orbit",
+  translateY: [100, -300, 300],
+  translateX: [300, -400],
+  easing: "easeInSine",
+  scale: 1,
+  direction: 'alternate',
+  loop:true,
+  duration: 10000
+});
