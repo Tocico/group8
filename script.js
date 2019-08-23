@@ -78,8 +78,10 @@ function parallax() {
     return window.innerHeight - rect.top;
   }
 
+  /* Sub title animation */
   function checkForVisibility() {
     var headers = document.querySelectorAll(".header");
+
     headers.forEach(function(header) {
       if (isElementInViewport(header)) {
         header.classList.add("headerVisible");
@@ -88,12 +90,36 @@ function parallax() {
       }
     });
   }
+
+  /* Main title animation */
+  function titleActivity(){
+    let h1title = document.querySelectorAll(".h1title");
+
+    h1title.forEach(function(h1title){
+      if(isElementInViewport(h1title)){
+        h1title.innerHTML = h1title.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+        
+        anime.timeline({loop: false})
+          .add({
+            targets: '.h1title .letter',
+            translateY: [-100,0],
+            translateX: [90,0],
+            easing: "easeOutCubic",
+            duration: 1400,
+            delay: function(el, i) {
+              return 100 * i;
+            }
+          });
+      }
+    })
+    
+  }
+  
   
   function isElementInViewport (el) {
     var rect = el.getBoundingClientRect();
   
     return (
-      
       rect.top + (rect.height)/2 < window.innerHeight
     );
   }
@@ -104,27 +130,12 @@ function parallax() {
     addEventListener('scroll', checkForVisibility, false);
   }
   
- /* Title animering */
-  var textWrapper = document.querySelector('.h1title');
-  textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+  if (window.addEventListener) {
+    addEventListener('DOMContentLoaded', titleActivity, false); 
+    addEventListener('load', titleActivity, false);
+    addEventListener('scroll', titleActivity, false);
+  }
   
-  anime.timeline({loop: true})
-    .add({
-      targets: '.h1title .letter',
-      translateY: [-100,0],
-      translateX: [90,0],
-      easing: "easeOutCubic",
-      duration: 1400,
-      delay: function(el, i) {
-        return 100 * i;
-      }
-    }).add({
-      targets: '.h1title',
-      opacity: 0,
-      duration: 1000,
-      easing: "easeOutCubic",
-      delay: 1000
-    });
 
 
 /* Sun */
@@ -132,20 +143,8 @@ anime({
     targets: '#sun',
     loop: true,
     duration: 10000,
-    translateY: [
-        {
-            value: -30,
-        },{
-            value: 20
-        }
-    ],
-    translateX: [
-        {
-            value: -50, 
-        },{
-            value: 40,
-        }
-    ],
+    translateY: [-30,20],
+    translateX: [-50,40],
     direction:'alternate',
     translateX: 100,
     easing: 'easeInOutCubic',
@@ -191,7 +190,6 @@ function getStar(stars){
   starStyle.right = 100 * Math.random() + '%';
   starStyle.left = 100 * Math.random() + '%';
   starStyle.top = 100 * Math.random() + '%';
-  starStyle.bottom = 100 * Math.random() + '%';
   
   document.body.appendChild(starClone);
 
