@@ -1,6 +1,6 @@
 anime({
   translateX: {
-    value: -400,
+    value: 700,
     duration: 1000,
     easing: 'easeOutQuint',
   },
@@ -11,7 +11,7 @@ anime({
       easing: 'easeInOutSine',
     },
     scale: {
-      value: 2.5,
+      value: 4.5,
       duration: 3000,
       delay: 2000,
       easing: 'easeInOutBounce'
