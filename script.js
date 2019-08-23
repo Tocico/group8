@@ -1,12 +1,12 @@
 anime({
   translateX: {
-    value: 700,
+    value: [-500,500],
     duration: 1000,
     easing: 'easeOutQuint',
   },
     targets: '#mars',
     rotate: {
-      value: 360,
+      value: 800,
       duration: 2000,
       easing: 'easeInOutSine',
     },
