@@ -56,40 +56,16 @@
      color: aliceblue;
  }
 
- .section-0 {
+ .section-0, .section, .section-2, .section-3 {
     display: grid;
     justify-items: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
 }
  .section-1{
-     display: grid;
-     justify-items: center;
-    align-items: center;
     justify-content: space-around;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 1fr 300px;
-     height: 100vh;
-     width: 100vw;
  }
-
- .section-2 {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-
-.section-3 {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-
  img {
      height: 250px;
      width: 250px;
@@ -99,14 +75,10 @@
      width: 100px;
      
  }
-
-
-
  h2, h1{
      font-size: 2.5em;
      font-family: 'Rubik Mono One', sans-serif;
  }
-
  .stars{
      width: 4px;
      height: 4px;
@@ -125,7 +97,6 @@
      transform: translateX(-80px);
      transition: all 1.2s ease-out;
  }
-
  .header-blue {
     width: 40%;
     font-size: 1.5em;
@@ -133,17 +104,11 @@
     opacity: 0;
     transform: translateX(100px);
     transition: all 1.2s ease-out;
-
  }
- 
- 
- 
   .headerVisible {
     opacity: 1;
     transform: translateX(0);
   }
-
-
   .h1title {
     font-weight: 800;
     font-size: 2.6em;
@@ -152,18 +117,14 @@
     grid-column: none;
     margin-bottom: 200px;
   }
-  
   .h1title .letter {
     display: inline-block;
     line-height: 1em;
   }
-
   #rocket{
       width: 150px;
   }
-
  /* shooting star */
-
 .shootingstar{
     position: absolute;
     width: 4px;
@@ -173,7 +134,6 @@
     box-shadow: 0 0 5px rgba(255, 241, 202, 0.8), 0 0 8px rgba(255, 241, 202, 0.8), 0 0 15px rgba(255, 241, 202, 0.9);
     right: 5%;
   }
-
   /*Mars section*/
   .titlemars{
       grid-column: 2;
