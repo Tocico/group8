@@ -180,7 +180,6 @@ function getStar(stars) {
   starStyle.right = 100 * Math.random() + "%";
   starStyle.left = 100 * Math.random() + "%";
   starStyle.top = 100 * Math.random() + "%";
-
   document.body.appendChild(starClone);
 }
 
