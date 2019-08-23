@@ -56,13 +56,12 @@
      color: aliceblue;
  }
 
- .section-0, .section, .section-2, .section-3 {
+ .section-0, .section-1, .section-2, .section-3 {
     display: grid;
     justify-items: center;
     align-items: center;
 }
  .section-1{
-    justify-content: space-around;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 100px 1fr 300px;
 }
